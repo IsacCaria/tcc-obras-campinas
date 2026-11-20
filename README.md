@@ -1,6 +1,6 @@
 # Monitoramento de Obras Públicas de Campinas
 
-Protótipo de plataforma web para consulta de dados públicos sobre obras municipais de Campinas.
+Plataforma web para consulta de dados públicos sobre obras municipais de Campinas.
 
 ## Tecnologias
 
