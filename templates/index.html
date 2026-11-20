@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Obras Públicas de Campinas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header class="topo">
+        <div>
+            <p class="eyebrow">Transparência pública</p>
+            <h1>Monitoramento de Obras Públicas de Campinas</h1>
+            <p class="subtitulo">
+                Plataforma web para organizar, consultar e visualizar dados públicos
+                sobre obras municipais.
+            </p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="resumo" aria-label="Resumo das obras">
+            <article class="indicador">
+                <span>Total de obras</span>
+                <strong id="total-obras">0</strong>
+            </article>
+            <article class="indicador">
+                <span>Em execução</span>
+                <strong id="total-execucao">0</strong>
+            </article>
+            <article class="indicador">
+                <span>Concluídas</span>
+                <strong id="total-concluidas">0</strong>
+            </article>
+            <article class="indicador">
+                <span>Paralisadas/suspensas</span>
+                <strong id="total-paralisadas">0</strong>
+            </article>
+        </section>
+
+        <section class="painel-filtros" aria-label="Filtros de busca">
+            <div class="campo campo-busca">
+                <label for="busca">Buscar</label>
+                <input id="busca" type="search" placeholder="Nome, descrição, empresa, contrato...">
+            </div>
+
+            <div class="campo">
+                <label for="situacao">Situação</label>
+                <select id="situacao">
+                    <option value="">Todas</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label for="classificacao">Classificação</label>
+                <select id="classificacao">
+                    <option value="">Todas</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label for="secretaria">Secretaria</label>
+                <select id="secretaria">
+                    <option value="">Todas</option>
+                </select>
+            </div>
+
+            <button id="limpar-filtros" class="botao-secundario" type="button">Limpar</button>
+        </section>
+
+        <section class="cabecalho-lista">
+            <div>
+                <h2>Obras cadastradas</h2>
+                <p id="contador-resultados">Carregando obras...</p>
+            </div>
+        </section>
+
+        <section id="lista-obras" class="lista-obras" aria-live="polite"></section>
+    </main>
+
+    <dialog id="modal-obra" class="modal">
+        <div class="modal-topo">
+            <h2 id="modal-titulo"></h2>
+            <button id="fechar-modal" class="botao-fechar" type="button" aria-label="Fechar detalhes">×</button>
+        </div>
+        <div id="modal-conteudo" class="modal-conteudo"></div>
+    </dialog>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
